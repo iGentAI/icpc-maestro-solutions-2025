@@ -1,0 +1,64 @@
+Problem E
+Delivery Service
+Time limit: 12 seconds
+The Intercity Caspian Package Company (ICPC) is starting a delivery service which will deliver packages between various cities near the Caspian Sea. The company plans to hire couriers to carry packages
+between these cities.
+Each courier has a home city and a destination city, and all couriers have exactly the same travel schedule: They leave their home city at 9:00, arrive at their destination city at 12:00, leave their destination
+city at 14:00 and return to their home city at 17:00. While couriers are in their home or destination
+cities, they can receive packages from and/or deliver packages to customers. They can also hand off to
+or receive packages from other couriers who are in that city at the same time. Since ICPC is a personal
+service, packages are never left in warehouses or other facilities to be picked up later – unless the package has reached its destination, couriers have to either keep the package with themselves (during the day
+or during the night), or hand it off to another courier.
+The company will direct the couriers to hand off packages in such a way that any package can always
+be delivered to its destination. Or so it is hoped! We’ll say that two cities u and v are connected if it is
+possible to deliver a package from city u to city v as well as from v to u. To estimate the efficiency of
+their hiring process, the company would like to find, after each courier is hired, the number of pairs of
+cities (u, v) that are connected (1 ≤ u < v ≤ n).
+
+Input
+The first line of input contains two integers n and m, where n (2 ≤ n ≤ 2 · 105 ) is the number of cities,
+and m (1 ≤ m ≤ 4 · 105 ) is the number of couriers that will be hired. Couriers are numbered 1 to m, in
+the order they are hired. This is followed by m lines, the ith of which contains two distinct integers ai
+and bi (1 ≤ ai , bi ≤ n), denoting the home and destination cities, respectively, for courier i.
+
+Output
+Output m integers, denoting the number of pairs of connected cities after hiring the first 1, 2, . . . , m
+couriers.
+
+49th ICPC World Championship Problem E: Delivery Service © ICPC Foundation
+
+9
+
+Sample Input 1
+
+Sample Output 1
+
+4 4
+1 2
+2 3
+4 3
+4 2
+
+1
+2
+4
+6
+
+Explanation of Sample 1:
+1. After the first courier is hired, cities 1 and 2 are connected.
+2. After the second courier is hired, cities 2 and 3 are connected. Note, however, that cities 1 and 3
+are still not connected. Even though there’s a courier moving between cities 1 and 2, and a courier
+moving between cities 2 and 3, they never meet each other.
+3. After the third courier is hired, cities 3 and 4 are connected and cities 2 and 4 are connected. For
+example, one way to deliver a package from city 2 to city 4 is:
+• hand it to courier 2 in city 2 at 19:00;
+• the next day, courier 2 arrives in city 3 at 12:00, and hands the package to courier 3 who is
+also in city 3;
+• at 18:00, courier 3 delivers the package to city 4.
+4. After the fourth courier is hired, all six pairs of cities are connected.
+
+49th ICPC World Championship Problem E: Delivery Service © ICPC Foundation
+
+10
+
+
